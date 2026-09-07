@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>朱麒麟 | 交通运输专业简历</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #172a2c;
+    background: #f3f6f2;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+  :root {
+    --primary: #103f42;
+    --primary-2: #2d665f;
+    --accent: #b93b4d;
+    --accent-soft: #fbeef0;
+    --gold: #d7a03e;
+    --sky: #3d8b83;
+    --sky-soft: #e7f2ee;
+    --line: #dbe4df;
+    --muted: #5b7070;
+    --bg: #f3f6f2;
+    --white: #ffffff;
+    --shadow: 0 18px 46px rgba(16, 63, 66, 0.09);
+  }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  img { display: block; max-width: 100%; }
+  button { font: inherit; background: none; border: 0; cursor: pointer; }
+  .container { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .75s ease, transform .75s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  .nav {
+    position: fixed; inset: 0 0 auto; z-index: 100;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(16,63,66,.1);
+  }
+  .nav-inner {
+    max-width: 1180px; margin-inline: auto; padding: 0 24px;
+    height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  }
+  .brand { font-size: 18px; font-weight: 800; color: var(--primary); letter-spacing: .08em; display: flex; align-items: center; gap: 10px; }
+  .brand-mark { width: 32px; height: 32px; border-radius: 7px; background: var(--primary); color: #fff; display: grid; place-items: center; font-size: 14px; font-weight: 900; }
+  .nav-links { display: flex; align-items: center; gap: 4px; }
+  .nav-links a {
+    padding: 8px 14px; border-radius: 6px; color: #486063; font-size: 15px; font-weight: 600; transition: color .2s, background .2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); background: var(--accent-soft); }
+  .menu-btn {
+    display: none; width: 40px; height: 40px; border-radius: 6px; place-items: center;
+    color: var(--primary); border: 1px solid var(--line); background: #fff;
+  }
+
+  .hero {
+    position: relative; min-height: 100vh; overflow: hidden; padding: 138px 0 74px;
+    color: #fff; display: flex; align-items: center;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; background: url("assets/hero.jpg") center/cover no-repeat;
+    transform: scale(1.02);
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(115deg, rgba(7,34,37,.92) 0%, rgba(13,55,57,.78) 42%, rgba(10,44,47,.62) 100%);
+  }
+  .hero-grid-line {
+    position: absolute; inset: 0; z-index: 1; opacity: .22;
+    background-image:
+      linear-gradient(rgba(255,255,255,.22) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.22) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, #000, transparent 88%);
+    -webkit-mask-image: linear-gradient(to bottom, #000, transparent 88%);
+  }
+  .hero-content { position: relative; z-index: 3; width: min(1080px, calc(100% - 52px)); margin-inline: auto; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px;
+    border: 1px solid rgba(255,255,255,.3); border-radius: 5px; font-size: 14px; letter-spacing: .18em;
+    color: #f8e5b2; background: rgba(255,255,255,.08); font-weight: 600;
+  }
+  .hero h1 {
+    margin-top: 28px; font-size: clamp(52px, 8vw, 92px); line-height: 1.08; letter-spacing: .08em;
+    font-weight: 900; color: #fff; text-shadow: 0 4px 28px rgba(0,0,0,.2);
+  }
+  .hero-sub {
+    margin-top: 14px; font-size: clamp(20px, 2.6vw, 28px); color: rgba(255,255,255,.9); font-weight: 500; letter-spacing: .04em;
+  }
+  .hero-lead { margin-top: 20px; max-width: 720px; font-size: 17px; color: rgba(255,255,255,.78); }
+  .hero-actions { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    min-height: 48px; padding: 0 24px; border-radius: 7px; font-weight: 700; font-size: 16px;
+    transition: transform .2s, box-shadow .2s, background .2s;
+  }
+  .btn svg { width: 18px; height: 18px; }
+  .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 10px 26px rgba(185,59,77,.26); }
+  .btn-primary:hover { background: #a83243; transform: translateY(-2px); }
+  .btn-ghost { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.34); color: #fff; }
+  .btn-ghost:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
+
+  .quick-cards {
+    margin-top: 58px; display: grid; grid-template-columns: repeat(5, minmax(150px, 1fr)); gap: 14px;
+    max-width: 1000px;
+  }
+  .quick-card {
+    border-radius: 8px; padding: 20px 16px; text-align: center; min-height: 106px;
+    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22);
+    backdrop-filter: blur(8px);
+  }
+  .quick-card .num { font-size: 30px; font-weight: 900; color: #ffd98c; line-height: 1.1; }
+  .quick-card .small { font-size: 15px; font-weight: 700; }
+  .quick-card .label { margin-top: 7px; font-size: 13px; color: rgba(255,255,255,.76); letter-spacing: .1em; }
+  .scroll-cue {
+    position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); z-index: 3;
+    color: rgba(255,255,255,.65); font-size: 12px; letter-spacing: .22em; text-align: center;
+  }
+  .scroll-cue::after {
+    content: ""; display: block; width: 1px; height: 34px; margin: 8px auto 0;
+    background: rgba(255,255,255,.55); animation: cue 1.8s infinite;
+  }
+  @keyframes cue { 0%,100% { transform: scaleY(.45); transform-origin: top;} 50% { transform: scaleY(1);} }
+
+  .section { padding: 96px 0; }
+  .section-alt { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .section-head { max-width: 760px; }
+  .kicker { color: var(--accent); font-weight: 700; letter-spacing: .24em; font-size: 13px; text-transform: uppercase; }
+  .section-title { margin-top: 8px; font-size: clamp(30px, 4vw, 44px); color: var(--primary); font-weight: 900; letter-spacing: .05em; }
+  .section-lead { margin-top: 14px; color: var(--muted); font-size: 17px; }
+  .section-line { width: 76px; height: 4px; margin-top: 26px; border-radius: 2px; background: linear-gradient(90deg, var(--accent), var(--gold)); }
+
+  .profile-grid { display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: start; margin-top: 54px; }
+  .photo-wrap { position: relative; }
+  .photo-frame { overflow: hidden; border-radius: 8px; border: 1px solid rgba(16,63,66,.12); box-shadow: var(--shadow); background: #fff; }
+  .photo-frame img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top center; }
+  .photo-caption { margin-top: 16px; display: flex; justify-content: space-between; gap: 8px; color: var(--primary); font-weight: 700; font-size: 15px; }
+  .profile-main { padding-top: 4px; }
+  .profile-title { font-size: 25px; font-weight: 900; color: var(--primary); letter-spacing: .05em; }
+  .profile-desc { margin-top: 14px; color: #334b4d; font-size: 16px; }
+  .info-grid {
+    margin-top: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 22px;
+  }
+  .info-item { border-bottom: 1px dashed var(--line); padding: 10px 2px; display: grid; grid-template-columns: 74px 1fr; gap: 6px; }
+  .info-item dt { color: var(--muted); font-size: 14px; }
+  .info-item dd { font-weight: 600; color: var(--primary); font-size: 15px; overflow-wrap: anywhere; }
+  .tool-title { margin-top: 32px; font-size: 16px; font-weight: 800; color: var(--primary); letter-spacing: .05em; }
+  .tool-tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 9px; }
+  .tag {
+    display: inline-flex; align-items: center; padding: 6px 13px; border-radius: 5px; background: var(--sky-soft);
+    color: var(--primary-2); font-size: 14px; font-weight: 700; border: 1px solid #cfe3dc;
+  }
+  .tag.soft { background: var(--accent-soft); color: #9a3242; border-color: #f0d3d8; }
+  .tag.gold { background: #f8f1e1; color: #8c6a20; border-color: #eadba8; }
+
+  .metric-strip {
+    margin-top: 50px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  }
+  .metric {
+    border-radius: 8px; padding: 26px 20px; background: var(--primary); color: #fff; min-height: 138px;
+    display: flex; flex-direction: column; justify-content: center; gap: 7px;
+  }
+  .metric .m-label { color: rgba(255,255,255,.7); font-size: 13px; letter-spacing: .1em; }
+  .metric .m-value { font-size: 33px; font-weight: 900; line-height: 1.15; }
+  .metric .m-value small { font-size: 16px; color: #b9d5cf; font-weight: 700; }
+  .metric.alt { background: var(--accent); }
+  .metric.alt .m-value small { color: #f2bdc5; }
+
+  .academic-grid { display: grid; grid-template-columns: 1.3fr .9fr; gap: 24px; margin-top: 24px; align-items: start; }
+  .panel { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 30px; box-shadow: 0 10px 30px rgba(16,63,66,.05); }
+  .panel h3 { font-size: 18px; color: var(--primary); font-weight: 800; }
+  .panel h3 span { color: var(--accent); margin-right: 6px; }
+  .panel p { margin-top: 12px; color: #3a5153; }
+  .panel .date { color: var(--muted); font-size: 14px; margin-top: 4px; }
+  .course-chip { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+  .course-chip span {
+    padding: 6px 11px; border-radius: 5px; background: #f6faf7; border: 1px solid #dbe9e3;
+    color: var(--primary-2); font-size: 13px; font-weight: 600;
+  }
+  .line-list { margin-top: 18px; }
+  .line-list li { position: relative; padding-left: 20px; margin-top: 11px; color: #3a5153; }
+  .line-list li::before { content: ""; position: absolute; left: 2px; top: .68em; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+  .honor-badge {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 9px 16px; border-radius: 6px;
+    background: var(--accent-soft); border: 1px solid #f0ccd2; color: var(--accent); font-size: 14px; font-weight: 800;
+  }
+
+  .project-list { margin-top: 48px; display: grid; gap: 22px; }
+  .project {
+    background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--sky);
+    border-radius: 8px; padding: 30px 32px; box-shadow: 0 10px 30px rgba(16,63,66,.04);
+  }
+  .project:nth-child(2) { border-left-color: var(--accent); }
+  .project:nth-child(3) { border-left-color: var(--gold); }
+  .project-top { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; justify-content: space-between; }
+  .project-role { display: inline-flex; align-items: center; color: var(--accent); font-size: 14px; font-weight: 800; letter-spacing: .06em; }
+  .project-role::before { content: ""; width: 8px; height: 8px; margin-right: 8px; border-radius: 2px; background: currentColor; }
+  .project-date { color: var(--muted); font-size: 14px; background: #f1f5f1; padding: 5px 12px; border-radius: 5px; font-weight: 600; }
+  .project h3 { margin-top: 15px; font-size: 20px; color: var(--primary); font-weight: 900; line-height: 1.45; }
+  .project p { margin-top: 12px; color: #415759; }
+  .project-tags { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .achievement-grid { margin-top: 48px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .achievement {
+    border: 1px solid var(--line); border-radius: 8px; padding: 25px 28px; background: #fff; min-height: 210px;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .achievement:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .achievement .a-kind { display: inline-flex; align-items: center; gap: 7px; color: var(--sky); font-size: 13px; font-weight: 800; letter-spacing: .16em; }
+  .achievement .a-kind::before { content: ""; width: 22px; height: 3px; background: currentColor; border-radius: 2px; }
+  .achievement.accent .a-kind { color: var(--accent); }
+  .achievement.gold .a-kind { color: #9a741f; }
+  .achievement h3 { margin-top: 15px; color: var(--primary); font-size: 17px; font-weight: 800; line-height: 1.55; }
+  .achievement p { margin-top: 10px; color: var(--muted); font-size: 15px; }
+  .achievement .paper-title { color: var(--accent); font-weight: 700; }
+
+  .practice-grid { margin-top: 48px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .practice {
+    background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 28px 26px; height: 100%;
+  }
+  .practice .p-icon {
+    width: 38px; height: 38px; border-radius: 7px; display: grid; place-items: center;
+    background: var(--primary); color: #fff; font-weight: 900; font-size: 18px;
+  }
+  .practice:nth-child(2) .p-icon { background: var(--accent); }
+  .practice:nth-child(3) .p-icon { background: #8b6d1c; }
+  .practice h3 { margin-top: 18px; color: var(--primary); font-size: 18px; font-weight: 800; }
+  .practice p { margin-top: 11px; color: var(--muted); font-size: 15px; }
+  .practice .location { display: block; margin-top: 16px; color: var(--primary-2); font-size: 14px; font-weight: 700; }
+
+  .cert-section { margin-top: 40px; }
+  .cert-section h4 { font-size: 16px; font-weight: 800; color: var(--primary); margin-bottom: 16px; letter-spacing: .05em; }
+  .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+  .cert-card { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 4px 16px rgba(16,63,66,.06); transition: transform .25s, box-shadow .25s; }
+  .cert-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .cert-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+  .cert-card .cert-label { padding: 10px 14px; font-size: 13px; font-weight: 700; color: var(--primary); text-align: center; background: #f8faf9; border-top: 1px solid var(--line); }
+  .motto-band { margin-top: 66px; border-radius: 8px; background: var(--primary); color: #fff; padding: 38px 38px; }
+  .motto-band h3 { font-size: 24px; letter-spacing: .08em; font-weight: 900; }
+  .motto-band p { margin-top: 10px; color: rgba(255,255,255,.74); max-width: 860px; }
+
+  .cta-section { padding: 82px 0; }
+  .cta-panel {
+    background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 56px;
+    display: grid; grid-template-columns: 1.2fr .8fr; gap: 36px; align-items: center; box-shadow: var(--shadow);
+  }
+  .cta-panel h2 { color: var(--primary); font-size: clamp(28px, 4vw, 40px); font-weight: 900; letter-spacing: .04em; }
+  .cta-panel p { margin-top: 12px; color: var(--muted); }
+  .cta-panel .btn { min-width: 220px; }
+  .footer { border-top: 1px solid var(--line); background: #edf2ee; padding: 34px 0; }
+  .footer-inner { display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between; }
+  .footer-contact { display: flex; flex-wrap: wrap; gap: 10px 24px; color: var(--muted); font-size: 14px; }
+  .footer-contact a:hover { color: var(--accent); }
+  .footer small { color: #829495; }
+
+  @media (max-width: 980px) {
+    .quick-cards { grid-template-columns: repeat(3, minmax(130px,1fr)); }
+    .profile-grid { grid-template-columns: 220px 1fr; gap: 28px; }
+    .metric-strip { grid-template-columns: repeat(2, 1fr); }
+    .practice-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .practice:last-child { grid-column: 1 / -1; }
+  }
+
+  @media (max-width: 760px) {
+    .menu-btn { display: inline-grid; }
+    .nav-links {
+      position: absolute; left: 12px; right: 12px; top: 74px; display: none;
+      background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 10px;
+      flex-direction: column; align-items: stretch; gap: 2px; box-shadow: var(--shadow);
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a { display: block; padding: 11px 14px; }
+    .hero { padding-top: 118px; }
+    .hero-content { width: min(100% - 36px, 1180px); }
+    .hero h1 { font-size: 52px; }
+    .quick-cards { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+    .quick-card { min-height: 96px; }
+    .profile-grid { grid-template-columns: 1fr; }
+    .photo-frame { max-width: 220px; margin-inline: auto; }
+    .section { padding: 70px 0; }
+    .academic-grid, .achievement-grid, .practice-grid { grid-template-columns: 1fr; }
+    .practice:last-child { grid-column: auto; }
+    .cta-panel { grid-template-columns: 1fr; padding: 34px 28px; }
+    .cta-panel .btn { width: 100%; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .panel, .project { padding: 24px 20px; }
+  }
+
+  @media (max-width: 430px) {
+    .container { width: calc(100% - 32px); }
+    .hero h1 { font-size: 44px; }
+    .hero-lead { font-size: 15px; }
+    .info-grid { grid-template-columns: 1fr; }
+    .quick-cards { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#home" aria-label="返回首页"><span class="brand-mark">朱</span><span>朱麒麟 · 交通运输</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="打开导航" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">首页</a>
+      <a href="#profile">个人简介</a>
+      <a href="#academic">学业成绩</a>
+      <a href="#research">科研竞赛</a>
+      <a href="#practice">实践荣誉</a>
+      <a href="#download">完整简历</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-bg" role="img" aria-label="道路与交通主题背景"></div>
+  <div class="hero-grid-line" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="eyebrow reveal visible">长沙理工大学 · 交通学院 · 交通运输</div>
+    <h1 class="reveal visible">朱 麒 麟</h1>
+    <p class="hero-sub reveal visible">2023 级本科生 · 以交通强国建设为志</p>
+    <p class="hero-lead reveal visible">聚焦交通安全、数据分析与物流系统优化，扎根工程实践，在被动安全仿真、事故致因挖掘与物流网络建模中持续探索。</p>
+    <div class="hero-actions reveal visible">
+      <a class="btn btn-primary" href="#research">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+        了解科研经历
+      </a>
+      <a class="btn btn-ghost" href="%E6%9C%B1%E9%BA%92%E9%BA%9F.pdf" download="朱麒麟-简历.pdf">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+        下载完整 PDF
+      </a>
+    </div>
+    <div class="quick-cards reveal visible">
+      <div class="quick-card"><div class="num">3.60<small class="small"> / 4.00</small></div><div class="label">GPA 学分绩点</div></div>
+      <div class="quick-card"><div class="num">5<small class="small"> / 80</small></div><div class="label">专业排名</div></div>
+      <div class="quick-card"><div class="num">39<small class="small"> 门</small></div><div class="label">满绩点课程</div></div>
+      <div class="quick-card"><div class="num">1<small class="small"> 篇</small></div><div class="label">论文在审</div></div>
+      <div class="quick-card"><div class="num">15<small class="small"> 项</small></div><div class="label">荣誉表彰</div></div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">向下浏览</div>
+</section>
+
+<section class="section" id="profile">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Personal Profile</div>
+      <h2 class="section-title">个人简介</h2>
+      <p class="section-lead">具备科研项目主持、数据建模与多任务统筹能力，乐于从真实工程问题出发寻找可落地的解决方案。</p>
+      <div class="section-line"></div>
+    </div>
+    <div class="profile-grid">
+      <div class="photo-wrap reveal">
+        <div class="photo-frame"><img src="assets/蓝底证件照.jpg" alt="朱麒麟证件照"></div>
+        <div class="photo-caption"><span>朱麒麟</span><span>交通运输专业</span></div>
+      </div>
+      <div class="profile-main reveal">
+        <h3 class="profile-title">一个正在交通与数据交叉处成长的本科生</h3>
+        <p class="profile-desc">
+          21 岁，湖南衡阳人，共青团员。作为省级大创项目主持人，自主搭建有限元仿真分析体系；先后参与交通事故数据挖掘、零担物流网络优化项目，
+          熟悉从问题拆解、模型构建到结果验证的完整科研流程。同时长期承担班级与学院学生工作，重视协作、沟通与执行。
+        </p>
+        <dl class="info-grid">
+          <div class="info-item"><dt>手机</dt><dd>130-3734-7091</dd></div>
+          <div class="info-item"><dt>邮箱</dt><dd>3350191753@qq.com</dd></div>
+          <div class="info-item"><dt>学校</dt><dd>长沙理工大学</dd></div>
+          <div class="info-item"><dt>学院</dt><dd>交通运输工程学院</dd></div>
+          <div class="info-item"><dt>政治面貌</dt><dd>共青团员</dd></div>
+          <div class="info-item"><dt>籍贯</dt><dd>湖南省衡阳市</dd></div>
+        </dl>
+        <div class="tool-title">主要技能与工具</div>
+        <div class="tool-tags">
+          <span class="tag">Hypermesh</span>
+          <span class="tag">LS-DYNA</span>
+          <span class="tag">Python</span>
+          <span class="tag soft">MATLAB</span>
+          <span class="tag soft">SPSS</span>
+          <span class="tag gold">统计分析</span>
+          <span class="tag gold">英文文献检索与阅读</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="academic">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Academic Performance</div>
+      <h2 class="section-title">学业成绩</h2>
+      <p class="section-lead">持续保持稳定靠前的学业表现，重视专业课的理解深度与应用能力。</p>
+      <div class="section-line"></div>
+    </div>
+    <div class="metric-strip reveal">
+      <div class="metric"><span class="m-label">平均学分成绩</span><div class="m-value">87.92</div></div>
+      <div class="metric alt"><span class="m-label">专业排名</span><div class="m-value">5<small> / 80</small></div></div>
+      <div class="metric"><span class="m-label">英语水平</span><div class="m-value">CET-4 <small>433</small></div></div>
+      <div class="metric alt"><span class="m-label">学习特点</span><div class="m-value">稳中<small>向实</small></div></div>
+    </div>
+    <div class="academic-grid">
+      <div class="panel reveal">
+        <h3><span>◆</span>学习情况</h3>
+        <p class="date">长沙理工大学 · 交通学院 · 交通运输 · 2023.09 至今</p>
+        <ul class="line-list">
+          <li>39 门课程取得满绩点，成绩排名稳定在专业前 7%。</li>
+          <li>已具备独立检索、研读英文专业文献的能力，为科研阅读与写作打下基础。</li>
+          <li>课程学习中主动结合交通场景，在安全工程、智能优化、数据统计等方向持续投入。</li>
+        </ul>
+        <div class="honor-badge">优秀学生一等奖学金 · 优秀学生二等奖学金 · 二等学业奖学金</div>
+      </div>
+      <div class="panel reveal">
+        <h3><span>◆</span>高分课程</h3>
+        <div class="course-chip">
+          <span>电工电子基础 96</span>
+          <span>概率论与数理统计 96</span>
+          <span>新能源与绿色交通 96</span>
+          <span>智能优化算法 96</span>
+          <span>交通运输安全工程 96</span>
+          <span>大学物理 B（下）95</span>
+          <span>工程力学基础 95</span>
+          <span>线性代数 94</span>
+          <span>交通调查与分析实习 94</span>
+        </div>
+        <p style="margin-top:20px;color:#7d9290;font-size:14px;">以上仅为代表性课程，完整成绩单见原版 PDF。</p>
+      </div>
+    </div>
+    <div class="cert-section reveal">
+      <h4>◆ 证书证明</h4>
+      <div class="cert-grid">
+        <div class="cert-card"><img src="assets/扫描文件_20260906_125734_01.png" alt="CET-4成绩单"><div class="cert-label">CET-4 英语四级成绩单</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="research">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Research &amp; Competition</div>
+      <h2 class="section-title">科研与竞赛</h2>
+      <p class="section-lead">围绕车辆碰撞被动安全、城市道路事故风险与区域物流网络优化三个方向开展实践。</p>
+      <div class="section-line"></div>
+    </div>
+    <div class="project-list">
+      <article class="project reveal">
+        <div class="project-top">
+          <div class="project-role">省级大学生创新创业训练计划 · 项目主持人</div>
+          <div class="project-date">2025.11 – 至今</div>
+        </div>
+        <h3>基于时序控制策略的组合吸能元件匹配机制研究</h3>
+        <p>面向车辆碰撞被动安全下多管吸能装置高性能设计需求，采用 Hypermesh 与 LS-DYNA 完成多组薄壁管件有限元仿真建模，融合预折纹诱导纹路错位补偿、多管件载荷时序匹配评价方法开展机理探究；负责试验方案规划、仿真模型校验与试验数据整理分析，支撑项目研究报告与相关知识产权成果产出。</p>
+        <div class="project-tags">
+          <span class="tag">Hypermesh</span><span class="tag">LS-DYNA</span><span class="tag soft">预折纹薄壁管</span><span class="tag gold">被动安全</span>
+        </div>
+      </article>
+      <article class="project reveal">
+        <div class="project-top">
+          <div class="project-role">城市交通事故安全研究 · 核心参与人</div>
+          <div class="project-date">2024.09 – 2025.01</div>
+        </div>
+        <h3>基于多源统计与集成学习的道路交通事故影响因素及安全评估</h3>
+        <p>基于北京政务公开平台获取 6 万余条交通事故样本，运用 SPSS 完成数据清洗、缺失值插补、变量标准化与分类特征编码；融合单因素方差分析、卡方检验、多元 Logistic 回归与随机森林集成学习挖掘事故致因机理；独立完成 Python 建模脚本开发、样本不平衡处理、特征工程与结果可视化，输出交通安全等级评估报告，为城市道路设施优化与交通风险管控提供数据支撑。</p>
+        <div class="project-tags">
+          <span class="tag">Python</span><span class="tag">SPSS</span><span class="tag soft">随机森林</span><span class="tag soft">Logistic 回归</span><span class="tag gold">交通大数据</span>
+        </div>
+      </article>
+      <article class="project reveal">
+        <div class="project-top">
+          <div class="project-role">长三角零担货运网络研究 · 核心参与人</div>
+          <div class="project-date">2025.11 – 2026.01</div>
+        </div>
+        <h3>长三角零担货运网络枢纽选址与配送路径优化</h3>
+        <p>依托课程实践项目，针对区域零担物流网络布局不合理、运输成本偏高的实际问题，整理处理城市货运 OD、地理位置、货物收发量等基础数据；采用多种模型综合比选确定货运枢纽位置，结合经典路径优化算法完成配送路线规划；使用 MATLAB 实现数据运算与仿真分析，划分配送服务区域，测算车辆配置、运输成本与车辆利用率等评价指标，输出网络布局优化方案。</p>
+        <div class="project-tags">
+          <span class="tag">MATLAB</span><span class="tag">路径优化</span><span class="tag soft">枢纽选址</span><span class="tag gold">物流网络</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="practice">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Practice &amp; Achievement</div>
+      <h2 class="section-title">实践与荣誉</h2>
+      <p class="section-lead">将学生工作、志愿服务与学业科研多线并行，注重责任意识与执行能力。</p>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="practice-grid">
+      <article class="practice reveal">
+        <div class="p-icon">班</div>
+        <h3>学习委员 · 学院科创部副部长</h3>
+        <p>现任交通运输 2301 班学习委员，历任院团委科创部副部长，参与组织科创活动与项目申报，具备多任务统筹与大型活动组织经验。</p>
+        <span class="location">长沙理工大学 · 交通运输工程学院</span>
+      </article>
+      <article class="practice reveal">
+        <div class="p-icon">志</div>
+        <h3>志愿服务与社会调研</h3>
+        <p>依托省级“芙蓉学子”三下乡项目赴张家界开展“低空物流”实地调研；在衡阳市祁东县图书馆完成一个月志愿服务，多次参与返家乡社会实践。</p>
+        <span class="location">张家界 · 祁东县</span>
+      </article>
+      <article class="practice reveal">
+        <div class="p-icon">行</div>
+        <h3>高效执行与抗压</h3>
+        <p>面对学业、学生工作与社会实践多线并行，做好时间规划，区分任务优先级，有序推进各项事务，形成较强的执行与落地能力。</p>
+        <span class="location">行动力 · 优先级 · 责任感</span>
+      </article>
+    </div>
+
+    <div class="achievement-grid">
+      <article class="achievement reveal">
+        <div class="a-kind">论文发表 · 在审</div>
+        <h3 class="paper-title">Synergistic design of a multi-tube energy-absorbing device with induced pattern misalignment compensation</h3>
+        <p>Zhejun Feng, Qilin Zhu, Shichen Yang, Suchao Xie</p>
+      </article>
+      <article class="achievement accent reveal">
+        <div class="a-kind">奖学金情况</div>
+        <h3>优秀学生一等奖学金、优秀学生二等奖学金、二等学业奖学金</h3>
+        <p>以持续稳定的专业成绩获得多项学业奖励。</p>
+      </article>
+      <article class="achievement reveal">
+        <div class="a-kind">荣誉称号</div>
+        <h3>校“三好学生”“优秀班干部”等荣誉表彰近 15 项</h3>
+        <p>涵盖学习表现、学生工作与社会实践多个方面。</p>
+      </article>
+      <article class="achievement gold reveal">
+        <div class="a-kind">竞赛获奖</div>
+        <h3>第十七届读图制图大赛校级一等奖、第二十届交通运输科技大赛校级二等奖、第二十二届结构设计大赛等</h3>
+        <p>在工程图学、交通运输与结构设计等赛事中均有获奖。</p>
+      </article>
+    </div>
+
+    <div class="motto-band reveal">
+      <h3>「在模型中理解规律，在现场里验证方法」</h3>
+      <p>面向智能网联车辆决策与车路协同安全等方向，希望将本科积累的工程建模、数据分析与方案优化能力，用于更系统的交通问题研究。</p>
+    </div>
+    <div class="cert-section reveal">
+      <h4>◆ 荣誉证书</h4>
+      <div class="cert-grid">
+        <div class="cert-card"><img src="assets/扫描文件_20260906_125734_02.png" alt="优秀学生一等奖学金"><div class="cert-label">优秀学生一等奖学金</div></div>
+        <div class="cert-card"><img src="assets/扫描文件_20260906_125734_03.png" alt="优秀班干部"><div class="cert-label">优秀班干部</div></div>
+        <div class="cert-card"><img src="assets/扫描文件_20260906_125734_04.png" alt="优秀学生二等奖学金"><div class="cert-label">优秀学生二等奖学金</div></div>
+        <div class="cert-card"><img src="assets/扫描文件_20260906_125734_05.png" alt="荣誉证书"><div class="cert-label">荣誉证书</div></div>
+        <div class="cert-card"><img src="assets/扫描文件_20260906_125734_06.png" alt="荣誉证书"><div class="cert-label">荣誉证书</div></div>
+        <div class="cert-card"><img src="assets/扫描文件_20260906_125734_07.png" alt="荣誉证书"><div class="cert-label">荣誉证书</div></div>
+        <div class="cert-card"><img src="assets/扫描文件_20260906_125734_08.png" alt="荣誉证书"><div class="cert-label">荣誉证书</div></div>
+        <div class="cert-card"><img src="assets/扫描文件_20260906_125734_09.png" alt="荣誉证书"><div class="cert-label">荣誉证书</div></div>
+        <div class="cert-card"><img src="assets/扫描文件_20260906_125734_10.png" alt="荣誉证书"><div class="cert-label">荣誉证书</div></div>
+        <div class="cert-card"><img src="assets/扫描文件_20260906_125734_11.png" alt="荣誉证书"><div class="cert-label">荣誉证书</div></div>
+        <div class="cert-card"><img src="assets/扫描文件_20260906_125734_12.png" alt="荣誉证书"><div class="cert-label">荣誉证书</div></div>
+        <div class="cert-card"><img src="assets/扫描文件_20260906_125734_13.png" alt="荣誉证书"><div class="cert-label">荣誉证书</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="download">
+  <div class="container">
+    <div class="cta-panel reveal">
+      <div>
+        <h2>查看完整简历</h2>
+        <p>原始 PDF 共 21 页，包含简历正文、成绩与荣誉证明等材料，可直接下载、打印或发送给招生与用人单位。</p>
+      </div>
+      <a class="btn btn-primary" href="%E6%9C%B1%E9%BA%92%E9%BA%9F.pdf" download="朱麒麟-简历.pdf">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+        朱麒麟简历.pdf
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-contact">
+      <a href="tel:13037347091">📞 130-3734-7091</a>
+      <a href="mailto:3350191753@qq.com">✉ 3350191753@qq.com</a>
+      <span>湖南 · 长沙理工大学</span>
+    </div>
+    <small>© 2026 朱麒麟 · 个人简历展示页</small>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+  });
+  navLinks.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  const sectionLinks = document.querySelectorAll('.nav-links a');
+  const sections = [...sectionLinks].map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const setActive = () => {
+    let current = sectionLinks[0].getAttribute('href');
+    sections.forEach((sec, index) => {
+      if (window.scrollY + 120 >= sec.offsetTop && window.scrollY + 120 < sec.offsetTop + sec.offsetHeight) {
+        current = sectionLinks[index].getAttribute('href');
+      }
+    });
+    sectionLinks.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === current));
+  };
+  window.addEventListener('scroll', setActive, { passive: true });
+  setActive();
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+</script>
+</body>
+</html>
